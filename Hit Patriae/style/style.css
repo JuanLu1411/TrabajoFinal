@@ -1,0 +1,80 @@
+body {
+    background-color: thistle;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "logo moneda";
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-family: cursive;
+
+    grid-area: logo;
+    margin-left: 2rem;
+    padding-top: 1.5rem;
+}
+
+.moneda {
+    width: 110px;
+    justify-self: end;
+}
+
+.monedas {
+    position: relative;
+}
+
+.texto-encima {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+    color: white;
+}
+
+
+.contenido {
+    justify-content: center;
+    display: grid;
+    gap: 4rem;
+}
+
+.question-container {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-family: cursive;
+}
+
+.answer-container {
+    gap: 2rem;
+    column-count: 2;
+    background-color: lavender;
+    padding: 40px;
+    border-radius: 50px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.ranking{
+    width: max-content;
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    border-color: transparent;
+    border-radius: 999px;
+    color: black;
+    font-family: cursive;
+}
