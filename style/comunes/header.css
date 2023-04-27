@@ -1,0 +1,31 @@
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-family: cursive;
+
+    grid-area: logo;
+    margin-left: 2rem;
+    padding-top: 1.5rem;
+}
+
+.marcador {
+    width: 110px;
+    justify-self: end;
+}
+
+.puntuacion {
+    position: relative;
+}
+
+.texto-encima {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+    color: white;
+}

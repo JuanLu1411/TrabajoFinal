@@ -1,0 +1,40 @@
+body {
+    background-color: thistle;
+}
+
+.contenido {
+    justify-content: center;
+    display: grid;
+    gap: 4rem;
+}
+
+.question-container {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-family: cursive;
+}
+
+.answer-container {
+    gap: 2rem;
+    column-count: 2;
+    background-color: lavender;
+    padding: 40px;
+    border-radius: 50px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.ranking{
+    width: max-content;
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    border-color: transparent;
+    border-radius: 999px;
+    color: black;
+    font-family: cursive;
+}
