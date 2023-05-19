@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Country Quiz</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-  <h1>ADIVINA LA BANDERA</h1>
-  <div class="flag-container"></div>
-  <label for="countries-select">Seleciona el pais:</label>
-  <select id="countries-select"></select>
-  <label for="country-input">Escribe el Pais:</label>
-  <input id="country-input" type="text">
+  <title>Flagle</title>
 
-    <script src="../codes/pages/flagle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="icon" type="image/png" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="../style/header.css">
+
+  <link rel="stylesheet" href="../style/flagle.css">
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="./modosDeJuego.html">HIT PATRIAE</a>
+  </header>
+
+  <audio id="au" controls loop>
+    <source src="../music/musicaModos.mp3">
+  </audio>
+
+  <div class="contenido">
+    <h1>ADIVINA LA BANDERA</h1>
+    <div class="flag-container"></div>
+    <label for="errores">Cantidad de Errores:</label>
+    <span id="error-counter"></span>
+    <label for="country-input">Escribe el Pais:</label>
+    <input id="country-input" type="text">
+    <label for="countries-select">Seleciona el pais:</label>
+    <select id="countries-select"></select>
+  </div>
+
+  <script src="../codes/pages/flagle.js"></script>
+  <script src="../codes/pages/musicaModos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.js"></script>
+
+
 </body>
 
 </html>

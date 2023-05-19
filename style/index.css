@@ -1,0 +1,81 @@
+body{
+    background-image: url(../../img/fondoLogin.gif);
+    background-size: cover;
+    width: auto;
+    height: 100%;
+    font-family: cursive;    
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    display: grid;
+    margin-top: 11rem;
+    background-color: #fff;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    margin-bottom: 10px;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: auto;
+}
+
+.radio-container {
+    margin-bottom: 10px;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#btnLogin,
+#btnLoginGoogle {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#btnLogin:hover,
+#btnLoginGoogle:hover {
+    background-color: #0069d9;
+}
+
+/* Estilos específicos para la autenticación con Google */
+
+#btnLoginGoogle {
+    background-color: #dd4b39;
+}
+
+#btnLoginGoogle:hover {
+    background-color: #c23321;
+}

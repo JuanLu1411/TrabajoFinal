@@ -10,36 +10,79 @@
 
     <link rel="icon" type="image/png" href="../img/favicon.ico">
 
-    <link rel="stylesheet" href="../style/comunes/header.css">
+    <link rel="stylesheet" href="../style/header.css">
 
-    <link rel="stylesheet" href="../style/pages/modosDeJuego.css">
+    <link rel="stylesheet" href="../style/modosDeJuego.css">
 
-    <title>FLAGLE</title>
+    <link rel="icon" type="image/png" href="../img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
+    <title>Modos de Juego</title>
 </head>
 
 <body>
 
+    <audio id="au" controls loop>
+        <source src="../music/musicaSelecionModo.mp3">
+    </audio>
+
     <header>
-        <a class="logo" href="">HIT PATRIAE</a>
+        <a class="logo" href="./modosDeJuego.html">HIT PATRIAE</a>
     </header>
 
-    <div class="modosDeJuego" id="modosDeJuego">
-        <div class="banderas">
-            <a href="../pages/juego_Banderas.html">Banderas</a>
+    <div id="modosDeJuegoCarousel">
+        <div class="carousel-slide" data-index="0">
+            <div class="banderas hidden">
+                <div class="infoBanderas">
+                    <h2>Modalidad por banderas</h2>
+                    <p>En esta modalidad, al usuario se le harán un total de 10 preguntas y este deberá responder de
+                        forma correcta la mayor cantidad.</p>
+                    <a href="../pages/juego_Banderas.html">Banderas</a>
+                </div>
+            </div>
         </div>
-        <div class="capitales">
-            <a href="../pages/flagle.html">Adivina la bandera</a>
+        <div class="carousel-slide" data-index="1">
+            <div class="capitales hidden">
+                <div class="infoFlagle">
+                    <h2>Flagle</h2>
+                    <p>En esta modalidad, al usuario le aparecerá una bandera por pantalla y este deberá acertarla o, en
+                        caso contrario, si falla en un total de 5 ocasiones, le retornará a la pantalla de selección de
+                        modo de juego.</p>
+                    <a href="../pages/flagle.html">Adivina la bandera</a>
+                </div>
+            </div>
         </div>
-        <div class="densidadPoblacion">
-            <a href="">Densidad de Poblacion</a>
+        <div class="carousel-slide" data-index="2">
+            <div class="competitivo hidden">
+                <div class="infoCompetitivo">
+                    <h2>Competitivo</h2>
+                    <p>En este modo, por cada respuesta acertada se sumará un punto y dependiendo de esta puntuación
+                        estarás en una división u otra.</p>
+                    <a href="../pages/competitivo.html">Densidad de Población</a>
+                </div>
+            </div>
         </div>
-        <div class="remix">
-            <a href="">Remix</a>
+        <div class="carousel-slide" data-index="3">
+            <div class="remix hidden">
+                <div class="infoRemix">
+                    <h2>Remix</h2>
+                    <p>En este modo, se generarán preguntas sobre países. Entre estas preguntas habrá cuestiones sobre
+                        banderas, capitales y densidad de población.</p>
+                    <a href="remix.html">Remix</a>
+                </div>
+            </div>
         </div>
     </div>
 
-</body>
+    <script src="../codes/pages/modosDeJuego.js"></script>
 
-<script src="./codes/comun/monedas.js"></script>
+</body>
 
 </html>

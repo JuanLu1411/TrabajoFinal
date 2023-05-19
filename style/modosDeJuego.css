@@ -1,0 +1,135 @@
+html,
+body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--background-color);
+    transition: background-color 0.5s ease;
+    /* Utiliza la variable para el color de fondo */
+}
+
+#au{
+    display: none;
+}
+
+:root {
+    --background-color: grey;
+    /* Color de fondo predeterminado */
+}
+
+#au{
+    display: none;
+}
+
+.carousel-slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide .banderas {
+    background-image: url("../img/fondoModoBanderas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    animation: backgroundAnimation 10s infinite;
+}
+
+.carousel-slide .capitales {
+    background-image: url("../img/fondoFlagle.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    animation: backgroundAnimation 10s infinite;
+}
+
+.carousel-slide .competitivo {
+    background-image: url("../img/fondoCompetitivo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    animation: backgroundAnimation 10s infinite;
+}
+
+.carousel-slide .remix {
+    background-image: url("../img/fondoFlagle.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    animation: backgroundAnimation 10s infinite;
+}
+
+.infoBanderas,
+.infoFlagle,
+.infoCompetitivo,
+.infoRemix {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    gap: 5rem;
+    display: grid;
+    border-radius: 18px;
+}
+
+.carousel-slide h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+}
+
+.carousel-slide p {
+    font-size: 18px;
+    font-family: cursive;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.carousel-slide a {
+    font-size: 18px;
+    font-family: cursive;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: center;
+    }
+    50% {
+        background-position: top;
+    }
+    100% {
+        background-position: bottom;
+    }
+}

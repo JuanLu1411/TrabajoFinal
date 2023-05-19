@@ -1,5 +1,5 @@
 var contador = 0;
-var respuestasCorrectas = 0; // Agrega una variable para rastrear el número de respuestas correctas
+var respuestasCorrectas = 0;
 
 $(document).ready(function generateQuestion() {
     $(".question-container").empty();
@@ -41,34 +41,57 @@ $(document).ready(function generateQuestion() {
 
                 $(".answer").click(function () {
                     if ($(this).attr("data-correct") === "true") {
-                        alert("¡Correcto!");
-                        respuestasCorrectas++; // Aumenta el número de respuestas correctas en 1
+                        Swal.fire({
+                            title: '¡Correcto!',
+                            icon: 'success'
+                        });
+                        respuestasCorrectas++;
                         contador++;
                         if (contador != 10) {
-                            setTimeout(generateQuestion, 0100);
+                            setTimeout(generateQuestion, 100);
+                            console.log(contador)
                         } else {
-                            alert("Has respondido las 10 preguntas. Ha obtenido " + respuestasCorrectas + "/10 respuestas correctas."); // Muestra el número de respuestas correctas
-                            window.location.assign("modosDeJuego.html");
+                            Swal.fire({
+                                title: '¡Felicidades!',
+                                text: 'Has respondido las 10 preguntas. Ha obtenido ' + respuestasCorrectas + '/10 respuestas correctas.',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.assign("modosDeJuego.html");
+                                }
+                            });
                         }
                     } else {
-                        alert("¡Incorrecto!");
+                        Swal.fire({
+                            title: '¡Incorrecto!',
+                            icon: 'error'
+                        });
                         contador++;
-                        setTimeout(generateQuestion, 0100);
+                        setTimeout(generateQuestion, 100);
                     }
 
                     if (contador == 10 && respuestasCorrectas < 5) {
-                        alert("Has respondido las 10 preguntas. Ha obtenido " + respuestasCorrectas + "/10 respuestas correctas.");
-                        window.location.assign("modosDeJuego.html");
+                        Swal.fire({
+                            title: '¡Lo siento!',
+                            text: 'Has respondido las 10 preguntas. Solo has obtenido ' + respuestasCorrectas + '/10 respuestas correctas. Debes obtener al menos 5 respuestas correctas para pasar la prueba.',
+                            icon: 'warning',
+                            confirmButtonText: 'Volver a intentar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                contador = 0;
+                                respuestasCorrectas = 0;
+                                generateQuestion();
+                            }
+                        });
                     }
                 });
             },
-            error: function (xhr, status, error) {
-                console.log("Error: " + error);
+            error: function (err) {
+                console.log(err);
             }
         });
     }
-    document.getElementById("puntuacion").innerHTML = contador;
-    document.getElementById("puntuacion").innerHTML += "/10";
 });
 
 function shuffleArray(array) {

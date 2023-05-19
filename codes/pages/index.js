@@ -64,6 +64,8 @@ btnLoginGoogle.addEventListener("click", () => {
 		.then((result) => {
 			// Login exitoso
 			const user = result.user;
+			const userString = JSON.stringify(user);
+			window.localStorage.setItem("user", userString);
 			console.log("Usuario logueado:", user);
 			alert("Usuario logueado correctamente con google");
 			window.location.assign("pages/modosDeJuego.html");
