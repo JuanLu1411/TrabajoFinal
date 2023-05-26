@@ -50,6 +50,19 @@ img {
     }
 }
 
+@media (max-height: 730px) {
+    .contenido {
+        gap: 0rem;
+        max-width: 695px;
+        margin: 0 auto; /* Agregado para centrar el contenido */
+        justify-content: center; /* Agregado para centrar el contenido */
+    }
+
+    .question-container {
+        font-size: 37px;
+    }
+}
+
 .ranking {
     width: max-content;
     display: block;

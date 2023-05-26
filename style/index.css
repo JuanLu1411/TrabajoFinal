@@ -1,9 +1,9 @@
-body{
+body {
     background-image: url(../../img/fondoLogin.gif);
     background-size: cover;
     width: auto;
     height: 100%;
-    font-family: cursive;    
+    font-family: cursive;
 }
 
 .container {
@@ -78,4 +78,26 @@ body{
 
 #btnLoginGoogle:hover {
     background-color: #c23321;
+}
+
+/* Responsive styles */
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 6rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        margin-top: 4rem;
+        padding: 10px;
+    }
+}
+
+@media (max-height: 730px) {
+    .container{
+        margin-top: 2rem;
+    }
 }
