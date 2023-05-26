@@ -15,9 +15,9 @@ const database = firebase.database(app);
 
 
 function sumarAcierto() {
-    const user = JSON.parse(window.localStorage.getItem("user"))
-    console.log(user.uid)
-    console.log(user.email)
+    const user = JSON.parse(window.localStorage.getItem("user"));
+    console.log(user.uid);
+    console.log(user.email);
     var aciertos;
     const userRef = database.ref(user.uid);
     userRef.once("value", function (snapshot) {
@@ -41,8 +41,39 @@ function sumarAcierto() {
             aciertos: aciertos
         }
 
+        console.log(aciertos)
+
         userRef.set(userData);
-    })
+
+        if (aciertos >= 400) {
+            $("#rangoImagen").attr("src", "../../img/radiante.png");
+            $(".nombreRango").html("Radiante<br><br> ¡Rango Maximo!:<br>"+aciertos)
+        } else if (aciertos >= 350) {
+            $("#rangoImagen").attr("src", "../../img/inmortal.png");
+            $(".nombreRango").html("Inmortal<br><br> Siengiente rango:<br>"+aciertos+"/400")
+        } else if (aciertos >= 300) {
+            $("#rangoImagen").attr("src", "../../img/ascendente.png");
+            $(".nombreRango").html("Ascendente<br><br> Siengiente rango:<br>"+aciertos+"/350")
+        } else if (aciertos >= 250) {
+            $("#rangoImagen").attr("src", "../../img/diamante.png");
+            $(".nombreRango").html("Diamante<br><br> Siengiente rango:<br>"+aciertos+"/300")
+        }else if (aciertos >= 200) {
+            $("#rangoImagen").attr("src", "../../img/platino.png");
+            $(".nombreRango").html("Platino<br><br> Siengiente rango:<br>"+aciertos+"/250")
+        }else if (aciertos >= 150) {
+            $("#rangoImagen").attr("src", "../../img/oro.png");
+            $(".nombreRango").html("Oro<br><br> Siengiente rango:<br>"+aciertos+"/200")
+        }else if (aciertos >= 100) {
+            $("#rangoImagen").attr("src", "../../img/plata.png");
+            $(".nombreRango").html("Plata<br><br> Siengiente rango:<br>"+aciertos+"/150")
+        }else if (aciertos >= 50) {
+            $("#rangoImagen").attr("src", "../../img/bronce.png");
+            $(".nombreRango").html("Bronce<br><br> Siengiente rango:<br>"+aciertos+"/100")
+        }else {
+            $("#rangoImagen").attr("src", "../../img/hierro.png");
+            $(".nombreRango").html("Hierro<br><br> Siengiente rango:<br>"+aciertos+"/50")
+        }
+    });
 }
 
 var contador = 0;
@@ -53,6 +84,14 @@ $(document).ready(function () {
         if (user) {
             // El usuario está registrado, generar preguntas aleatorias
             generateRandomQuestions();
+
+            // Verificar si la imagen está almacenada en el localStorage
+            var rangoImagenSrc = localStorage.getItem("rangoImagenSrc");
+            if (rangoImagenSrc) {
+                $("#rangoImagen").attr("src", rangoImagenSrc);
+            } else {
+                $("#rangoImagen").attr("src", "../../img/fondoCompetitivo.png");
+            }
         } else {
             // El usuario no está registrado, redirigir a la página de inicio de sesión
             window.location.href = "login.html";

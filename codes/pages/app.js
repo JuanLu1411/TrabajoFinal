@@ -1,5 +1,6 @@
 var contador = 0;
 var respuestasCorrectas = 0;
+var numeroPregunta = 1;
 
 $(document).ready(function generateQuestion() {
     $(".question-container").empty();
@@ -31,7 +32,7 @@ $(document).ready(function generateQuestion() {
                 for (var i = 0; i < flags.length; i++) {
                     var flagHtml = "<img src='" + flags[i] + "'/>";
                     if (i === correctAnswerIndex) {
-                        var questionHtml = "<p>¿Cuál es la bandera de " + correctCountry.name.common + "?</p>";
+                        var questionHtml = "<p>Pregunta " + numeroPregunta + ": ¿Cuál es la bandera de " + correctCountry.name.common + "?</p>";
                         $(".question-container").append(questionHtml);
                         $(".answer-container").append("<div class='answer' data-correct='true'>" + flagHtml + "</div>");
                     } else {
@@ -46,6 +47,7 @@ $(document).ready(function generateQuestion() {
                             icon: 'success'
                         });
                         respuestasCorrectas++;
+                        numeroPregunta++;
                         contador++;
                         if (contador != 10) {
                             setTimeout(generateQuestion, 100);
@@ -68,6 +70,7 @@ $(document).ready(function generateQuestion() {
                             icon: 'error'
                         });
                         contador++;
+                        numeroPregunta++;
                         setTimeout(generateQuestion, 100);
                     }
 
@@ -81,6 +84,7 @@ $(document).ready(function generateQuestion() {
                             if (result.isConfirmed) {
                                 contador = 0;
                                 respuestasCorrectas = 0;
+                                numeroPregunta = 0;
                                 generateQuestion();
                             }
                         });
